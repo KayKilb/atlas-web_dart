@@ -1,19 +1,17 @@
 import '2-password.dart';
 
 void main() {
-  final ps = Password(password: "Just3z");
-  if (ps.isValid()) {
+  final ps = Password();
+  ps.password = "Just3z";
+  if (ps.isValid() == true)
     print("${ps.password} is a Valid Password");
-  } else {
+  else
     print("${ps.password} is Not a Valid Password");
-  }
-  print(ps.toString());
-
+  print("${ps.toString()}");
   ps.password = "ShouldWorkf7ne";
-  if (ps.isValid()) {
+  if (ps.isValid() == true)
     print("${ps.password} is a Valid Password");
-  } else {
+  else
     print("${ps.password} is Not a Valid Password");
-  }
-  print(ps.toString());
+  print("${ps.toString()}");
 }
