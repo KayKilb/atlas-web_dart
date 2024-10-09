@@ -2,6 +2,6 @@ class User {
   String? name;
 
   String showName() {
-    return "Hello \$name";
+    return "Hello $name";
   }
 }
