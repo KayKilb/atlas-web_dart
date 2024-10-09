@@ -1,7 +1,5 @@
 class Password {
-  String password;
-
-  Password({required this.password});
+  String password = '';
 
   bool isValid() {
     return password.length >= 8 &&
@@ -13,6 +11,21 @@ class Password {
 
   @override
   String toString() {
-    return "Your Password is: $password";
+    return 'Your Password is: $password';
   }
+}
+
+void main() {
+  final ps = Password();
+  ps.password = "Just3z";
+  print(ps.isValid()
+      ? "${ps.password} is a Valid Password"
+      : "${ps.password} is Not a Valid Password");
+  print(ps);
+
+  ps.password = "ShouldWorkf7ne";
+  print(ps.isValid()
+      ? "${ps.password} is a Valid Password"
+      : "${ps.password} is Not a Valid Password");
+  print(ps);
 }
