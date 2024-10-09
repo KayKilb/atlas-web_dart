@@ -1,4 +1,5 @@
-import '6-password.dart'
+import '6-password.dart';
+
 class User {
   int id;
   String name;
@@ -14,8 +15,19 @@ class User {
     required String user_password,
   }) : userPassword = Password(password: user_password);
 
+  String get user_password => userPassword.password;
+
+  set user_password(String new_password) {
+    userPassword.password = new_password;
+  }
+
   Map<String, dynamic> toJson() {
-    return {'id': id, 'name': name, 'age': age, 'height': height};
+    return {
+      "id": id,
+      "name": name,
+      "age": age,
+      "height": height,
+    };
   }
 
   static User fromJson(Map<dynamic, dynamic> userJson) {
@@ -24,12 +36,12 @@ class User {
       name: userJson['name'],
       age: userJson['age'],
       height: userJson['height'],
-      user_password: userJson['user_password'],
+      user_password: userJson['user_password'] ?? '',
     );
   }
 
   @override
   String toString() {
-    return "User(id : $id ,name: $name, age: $age, height: $height, Password: ${userPassword.isValid()})";
+    return 'User(id : $id ,name: $name, age: $age, height: $height, Password: ${userPassword.isValid()})';
   }
 }
