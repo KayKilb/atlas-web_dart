@@ -3,5 +3,5 @@ void helloFunction(String str) {
 }
 
 void main() {
-  helloFunction("Holberton")
+  helloFunction("Holberton");
 }
