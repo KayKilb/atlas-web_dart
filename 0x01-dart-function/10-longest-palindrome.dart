@@ -1,9 +1,3 @@
-bool isPalindrome(String s) {
-  if (s.length < 3) return false;
-  return s == s.split('').reversed.join('');
-}
-
-// 10. Longest Palindrome
 String longestPalindrome(String s) {
   String longest = 'none';
   for (int i = 0; i < s.length; i++) {
